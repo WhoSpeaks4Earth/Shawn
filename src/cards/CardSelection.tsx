@@ -29,8 +29,8 @@ export const CardSelection = () => {
         <SimpleGrid columns={5}>
             <GridItem colSpan={4}>
             <Heading>Choose your cards</Heading>
-                <Flex gap={4}>
-                    {cardService.allCards.map((c) => <Box key={c.name} onClick={(e) => onCardClick(e, c)}><Card {...c} /></Box>)}
+                <Flex gap={4} wrap='wrap'>
+                    {cardService.allCards.map((c) => <Box key={c.name} onClick={(e) => onCardClick(e, c)}><Card card={c} /></Box>)}
                 </Flex>
             </GridItem>
             <GridItem>

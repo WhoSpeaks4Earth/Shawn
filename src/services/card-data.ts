@@ -13,4 +13,28 @@ export const stockCardsDeck: ICard[] = [
         name: 'Microsoft',
         ranks: [5, 5, 5, 5]
     },
+    {
+        name: 'Apple',
+        ranks: [5, 5, 5, 5]
+    },
+    {
+        name: 'NVIDIA',
+        ranks: [5, 5, 5, 5]
+    },
+    {
+        name: 'Meta',
+        ranks: [5, 5, 5, 5]
+    },
+    {
+        name: 'Netflix',
+        ranks: [5, 5, 5, 5]
+    },
+    {
+        name: 'Adobe',
+        ranks: [5, 5, 5, 5]
+    },
+    {
+        name: 'Oracle',
+        ranks: [5, 5, 5, 5]
+    },
 ]
