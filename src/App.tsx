@@ -3,7 +3,7 @@ import {
   theme,
 } from "@chakra-ui/react"
 // import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { CardGame } from "./pages/CardGame";
+import { CardGame } from "./cards/CardGame";
 
 
 
