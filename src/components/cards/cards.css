@@ -1,4 +1,5 @@
 
-.player-cards .card {
+.card {
     background-color: whitesmoke;
+    border: 1px solid gray;
 }

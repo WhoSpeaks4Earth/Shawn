@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import { ICard } from "../models/ICard";
+import { ICard } from "../../models/ICard";
 import { Card } from "./Card";
 import "./cards.css";
 
@@ -16,7 +16,7 @@ export const PlayerCards = (props: {cards: ICard[]}) => {
     }
 
     return (
-        <Flex direction='column' gap={2} className='player-cards'>
+        <Flex direction='column' gap={2}>
             {props.cards.map((c, i) => <Card key={c.name} card={c} customStyle={getCardOffsetStyle(i)} />)}
         </Flex>
     )
