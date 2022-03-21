@@ -1,5 +1,5 @@
 import { ICard } from '../models/ICard';
-import { cardData } from './card-data';
+import { stockCardsDeck } from './card-data';
 
 interface ICardDataService {
     allCards: ICard[],
@@ -11,7 +11,7 @@ export class CardDataService implements ICardDataService {
     readonly allCards: ICard[] = [];
 
     loadCards(): void {
-        this.allCards.push(...cardData);
+        this.allCards.push(...stockCardsDeck);
     }
 
 

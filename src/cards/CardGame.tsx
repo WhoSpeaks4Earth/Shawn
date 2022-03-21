@@ -6,10 +6,6 @@ import { CardTableGrid } from "./CardTableGrid";
 import { PlayerCards } from "./PlayerCards";
 
 export const CardGame = () => {
-
-    const cardService = new CardDataService();
-    cardService.loadCards();
-    console.log(cardService.allCards);
     
     return (
         <CardSelection />
