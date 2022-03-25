@@ -21,8 +21,6 @@ export const App = () => (
       <Routes>
           <Route index element={<Home />} />
           <Route path="cardgame" element={<CardGame />}>
-            <Route path="new" element={<CardSelection />} />
-            <Route path="live" element={<GameTable />} />
           </Route>
       </Routes>
     </BrowserRouter>

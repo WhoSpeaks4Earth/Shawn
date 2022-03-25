@@ -1,5 +1,6 @@
 import { Box, Button, Flex, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CardGameContext } from "../../contexts/card-game-context";
 import { ICard } from "../../models/ICard";
 import { CardDataService } from "../../services/card-data-service";
@@ -7,7 +8,7 @@ import { Card } from "./Card";
 import { PlayerCards } from "./PlayerCards";
 
 
-export const CardSelection = () => {
+export const CardSelection = (props: {onReady:any}) => {
     const [cardOptions, setCardOptions] = useState<ICard[]>([]);
     const [selection, setSelection] = useState<ICard[]>([]);
 
@@ -41,7 +42,7 @@ export const CardSelection = () => {
                             <Card card={c} />
                         </Box>)}
                 </Flex>
-                <Button disabled={selection.length !== 5} mt={10}>Play!</Button>
+                <Button disabled={selection.length !== 5} onClick={props.onReady} mt={10}>Play!</Button>
             </GridItem>
             <GridItem rowSpan={2} colSpan={1} textAlign='center'>
                 <Heading>Selection</Heading>
