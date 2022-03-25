@@ -16,7 +16,7 @@ export const PlayerCards = (props: {cards: ICard[]}) => {
     }
 
     return (
-        <Flex direction='column' gap={2}>
+        <Flex direction='column' gap={2} justifyContent='center' alignItems='center' p={4}>
             {props.cards.map((c, i) => <Card key={c.name} card={c} customStyle={getCardOffsetStyle(i)} />)}
         </Flex>
     )

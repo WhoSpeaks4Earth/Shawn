@@ -32,15 +32,18 @@ export const CardSelection = () => {
     }
     
     return (
-        <SimpleGrid row={2} columns={5} h='100vh' border="1px solid blue">
+        <SimpleGrid row={2} columns={5} minChildWidth='120px' h='100vh'>
             <GridItem colSpan={4} textAlign="center">
             <Heading>Choose your cards</Heading>
-                <Flex gap={4} wrap='wrap'>
-                    {cardOptions.map((c) => <Box key={c.name} onClick={(e) => onCardClick(e, c)}><Card card={c} /></Box>)}
+                <Flex gap={4} wrap='wrap' p={4}>
+                    {cardOptions.map((c) => 
+                        <Box key={c.name} onClick={(e) => onCardClick(e, c)}>
+                            <Card card={c} />
+                        </Box>)}
                 </Flex>
-                <Button disabled={selection.length !== 5}>Play!</Button>
+                <Button disabled={selection.length !== 5} mt={10}>Play!</Button>
             </GridItem>
-            <GridItem rowSpan={2} colSpan={1}>
+            <GridItem rowSpan={2} colSpan={1} textAlign='center'>
                 <Heading>Selection</Heading>
                 <PlayerCards cards={selection} />
             </GridItem>
