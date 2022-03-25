@@ -11,7 +11,7 @@ export const CardSelection = () => {
     const [cardOptions, setCardOptions] = useState<ICard[]>([]);
     const [selection, setSelection] = useState<ICard[]>([]);
 
-    const msg = useContext(CardGameContext);
+    // const {value, setValue} = useContext(CardGameContext);
 
     useEffect(() => {
         const cardService = new CardDataService();
@@ -34,7 +34,7 @@ export const CardSelection = () => {
     return (
         <SimpleGrid row={2} columns={5} h='100vh' border="1px solid blue">
             <GridItem colSpan={4} textAlign="center">
-            <Heading>Choose your cards {msg}</Heading>
+            <Heading>Choose your cards</Heading>
                 <Flex gap={4} wrap='wrap'>
                     {cardOptions.map((c) => <Box key={c.name} onClick={(e) => onCardClick(e, c)}><Card card={c} /></Box>)}
                 </Flex>
