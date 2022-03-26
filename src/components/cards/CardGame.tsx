@@ -1,24 +1,30 @@
 import { SyntheticEvent, useState } from "react";
+import { ICard } from "../../models/ICard";
+import { ICardGame } from "../../models/ICardGame";
 import { CardSelection } from "./CardSelection";
 import { GameTable } from "./GameTable";
 
+type view = 'new' | 'playing';
 
-type view = 'new' | 'playing'
+
 
 export const CardGame = () => {
-    let [currentView, setView] = useState<view>('new')
+    const [cardGame, setCardGame] = useState<ICardGame>({
+        view: 'new',
+        playerHand: [],
+        opponentHand: []
+    });
+    
 
     const switchView = (e: SyntheticEvent, switchTo:view) => {
-        console.log(switchTo);
-        setView('playing');
+        setCardGame({...cardGame, view: switchTo});
     }
 
-    console.log(currentView)
-    switch(currentView) {
+    switch(cardGame.view) {
         case 'new':
             return <CardSelection onReady={(e: SyntheticEvent) => switchView(e, 'playing')} />
         case 'playing':
-            return <GameTable />
+            return <GameTable game={cardGame} />
         default:
             return null
     }

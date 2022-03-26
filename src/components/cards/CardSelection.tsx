@@ -1,7 +1,5 @@
 import { Box, Button, Flex, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { CardGameContext } from "../../contexts/card-game-context";
+import { useEffect, useState } from "react";
 import { ICard } from "../../models/ICard";
 import { CardDataService } from "../../services/card-data-service";
 import { Card } from "./Card";
@@ -12,7 +10,6 @@ export const CardSelection = (props: {onReady:any}) => {
     const [cardOptions, setCardOptions] = useState<ICard[]>([]);
     const [selection, setSelection] = useState<ICard[]>([]);
 
-    // const {value, setValue} = useContext(CardGameContext);
 
     useEffect(() => {
         const cardService = new CardDataService();
