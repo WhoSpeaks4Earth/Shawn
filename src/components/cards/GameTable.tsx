@@ -1,5 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/layout"
 import { ICardGame } from "../../models/ICardGame"
+import { PlayerCards } from "./PlayerCards"
 
 
 export const GameTable = (props:{game: ICardGame}) => {
@@ -16,7 +17,7 @@ export const GameTable = (props:{game: ICardGame}) => {
                 grid
             </GridItem>
             <GridItem rowSpan={6} p={4} border='1px solid blue'>
-                {/* <PlayerCards /> */}
+            <PlayerCards cards={props.game.playerHand} />
             </GridItem>
             <GridItem colSpan={5} p={4} border='1px solid blue'>bottom</GridItem>
         </Grid>

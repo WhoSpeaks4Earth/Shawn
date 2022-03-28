@@ -4,9 +4,6 @@ import { ICardGame } from "../../models/ICardGame";
 import { CardSelection } from "./CardSelection";
 import { GameTable } from "./GameTable";
 
-type view = 'new' | 'playing';
-
-
 
 export const CardGame = () => {
     const [cardGame, setCardGame] = useState<ICardGame>({
@@ -14,15 +11,15 @@ export const CardGame = () => {
         playerHand: [],
         opponentHand: []
     });
-    
 
-    const switchView = (e: SyntheticEvent, switchTo:view) => {
-        setCardGame({...cardGame, view: switchTo});
+
+    const setupNewGame = (e: SyntheticEvent, playerHand: ICard[]) => {
+        setCardGame({...cardGame, view: 'playing', playerHand});
     }
 
     switch(cardGame.view) {
         case 'new':
-            return <CardSelection onReady={(e: SyntheticEvent) => switchView(e, 'playing')} />
+            return <CardSelection onReady={(e: SyntheticEvent, cardSelection: ICard[]) => setupNewGame(e, cardSelection)} />
         case 'playing':
             return <GameTable game={cardGame} />
         default:

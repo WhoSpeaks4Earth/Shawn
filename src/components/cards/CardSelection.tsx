@@ -1,5 +1,5 @@
 import { Box, Button, Flex, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { ICard } from "../../models/ICard";
 import { CardDataService } from "../../services/card-data-service";
 import { Card } from "./Card";
@@ -39,7 +39,7 @@ export const CardSelection = (props: {onReady:any}) => {
                             <Card card={c} />
                         </Box>)}
                 </Flex>
-                <Button disabled={selection.length !== 5} onClick={props.onReady} mt={10}>Play!</Button>
+                <Button disabled={selection.length !== 5} onClick={(e: SyntheticEvent) => props.onReady(e, selection)} mt={10}>Play!</Button>
             </GridItem>
             <GridItem rowSpan={2} colSpan={1} textAlign='center'>
                 <Heading>Selection</Heading>
